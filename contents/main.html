@@ -37,41 +37,42 @@ Recent news
 instructons <a href="https://github.com/mccode-dev/McCode/tree/main/INSTALL-McStas">on GitHub </a>.
 <h2 id="what-s-changed">What&#39;s Changed - common McStas/McXtrace highlights:</h2>
 <ul>
-  <li>[Feature] McStas and McXtrace are now fully on conda-forge also
+  <li><strong>[Feature]</strong> McStas and McXtrace are now fully on conda-forge also
   for Windows, since <a href="https://github.com/mctools/mcpl/releases/tag/v2.0.0">MCPL 2.0 arrived</a>.
-  This means that we now recommend to install via this mechanism on
-  Windows. See the <a
+  <br>This means that we now recommend to install via this mechanism on Windows. See the <a
   href="https://github.com/mccode-dev/McCode/tree/main/INSTALL-McStas/Windows">instructions</a>
   for details. 
-  <li>[Feature] <code>mcrun/mxrun</code> have a new <code>-y</code>
+  <li><strong>[Feature]</strong> <code>mcrun/mxrun</code> have a new <code>-y</code>
   switch which runs a given instrument using its default parameters.
-  <li>[BUGFIX] <code>mcplot/mxplot</code> should now deal better with
+  <li><strong>[BUGFIX]</strong> <code>mcplot/mxplot</code> should now deal better with
   negative / very small numbers in 'log' mode plotting.
-  <li>[Feature] <code>mcgui/mxgui</code> improved tooltips on the run dialogue.
-  <li>[Feature] <code>rootmccode</code> works with newer versions of ROOT
-  <li>[BUGFIX] The KISS random number generator was earlier running
+  <li><strong>[Feature]</strong> <code>mcgui/mxgui</code> improved tooltips on the run dialogue.
+  <li><strong>[Feature]</strong> <code>rootmccode</code> works with newer versions of ROOT
+  <li><strong>[BUGFIX]</strong> The KISS random number generator was earlier running
   with systematically different random numbers (and a shorter period)
-  on Windows. Identical instruments should now run with identical
+  on Windows. <br>Identical instruments now run with identical
   random numbers across platforms, when using identical seed.
-  <li>[CI, packaging, platform support] Lots of work behind the scenes
+  <li><strong>[CI, packaging, platform support]</strong> Lots of work behind the scenes
   for portability, packaging, and improved CI of the code on
-  GitHub. Better standard solutions and easier possibility of spotting when/if we make errors!
+  GitHub. <br>
+  Better standard solutions and easier possibility of spotting when/if we make errors!
 </ul>
 <h2>What&#39;s Changed - McStas specific highlights:</h2>
 <ul>
-  <li>[BUGFIX] As reported on <a href="https://mailman2.mcstas.org/pipermail/mcstas-users/2025q2/001566.html">mcstas-users</a>, 
+  <li><strong>[BUGFIX]</strong> As reported on <a href="https://mailman2.mcstas.org/pipermail/mcstas-users/2025q2/001566.html">mcstas-users</a>, 
   reflective/transmissive polarisers/analysers could sometimes lead to
-  <code>|P|&gt;1</code>. This is now fixed by ellimination of
+  <code>|P|&gt;1</code>.
+  <br>This is now fixed by ellimination of
   "non-up-down" polarisation components when measuring an "up-down"
   polarisation.
-  <li>[Feature] Contributed component Source_custom by @pablogila,
+  <li><strong><strong[Feature]</strong> Contributed component Source_custom by @pablogila,
   useful features for simulatiung e.g. CANS and other pulsed
-  sources. With corresponding new test instrument.
+  sources.<br>Comes with corresponding new test instrument.
 </ul>
 <h2>What&#39;s Changed - McXtrace specific highlights:</h2>
 <ul>
-  <li>[Feature] New components for Fluorescence + Single_crystal and
-  Fluoresence + Powder, with corresponding new test instruments.
+  <li><strong>[Feature]</strong> New components for Fluorescence + Single_crystal and
+  Fluoresence + Powder. <br>Come with corresponding new test instruments.
 </ul>
 <h2>April 6th, 2025: Component doc pages back online</h2>
 <p>We are now in the air with new server hardware.
