@@ -55,11 +55,78 @@
 * Modified by: PW November 2024: version 3.5.12
 * Modified by: PW December 2024: version 3.5.16
 * Modified by: PW February 2025: version 3.5.24
+* Modified by: PW February 2025: version 3.5.24
 *
-* This file is part of McStas 3.5.24, released February 19th 2025.
+* This file is part of McStas 3.5.27, released April 29th 2025.
 * It gives a 'changes' list from the beginning of the project
 *
 *******************************************************************************/
+Changes in McStas/McXtrace 3.5.27, April 29th, 2025
+## What's Changed
+
+### Common new features and patches for McStas and McXtrace (tools, random numbers etc.)
+* Update rootmccode to work with new version of ROOT by @ebknudsen in https://github.com/mccode-dev/McCode/pull/1862
+* Add wrapper for mc/mxdisplay-cad on Windows by @willend in https://github.com/mccode-dev/McCode/pull/1888
+* Input flag -y / --yes applies all instrument parameter default values by @willend in https://github.com/mccode-dev/McCode/pull/1914
+* PowderN and SX fixes: cif2hkl now searches correctly files using Open_File/real path, and sets 'barns=1' by @farhi in https://github.com/mccode-dev/McCode/pull/1952
+* Correct implementation to use unit64_t (achieves a correct 64bit RNG also on Windows...) by @willend in https://github.com/mccode-dev/McCode/pull/1955 and https://github.com/mccode-dev/McCode/pull/1966
+* Add simple test of KISS RNG across platforms and compilers by @willend in https://github.com/mccode-dev/McCode/pull/1956
+* Suppress const char in the cif2hkl fcts by @willend in https://github.com/mccode-dev/McCode/pull/1957
+* Use mcpl 2.0 proper on Windows. by @willend in https://github.com/mccode-dev/McCode/pull/1962
+
+### New McStas specific features and patches
+* Full adaptation of "spin-component nullification" after "spin up/down measurement" by @willend in https://github.com/mccode-dev/McCode/pull/1886 (see also discussion on [mcstas-users](https://mailman2.mcstas.org/pipermail/mcstas-users/2025q2/001566.html)
+* Add component name in "segno" related Exit/Error statement by @willend in https://github.com/mccode-dev/McCode/pull/1895
+* Allow further geometries for He3 cell component by @willend in https://github.com/mccode-dev/McCode/pull/1915
+* Contributed component Source_custom by @pablogila in https://github.com/mccode-dev/McCode/pull/1911 and https://github.com/mccode-dev/McCode/pull/1946
+* Update MCPL_input.comp by @g5t in https://github.com/mccode-dev/McCode/pull/1924
+* PowderN: remove a static variable declare from SHARE section by @willend in https://github.com/mccode-dev/McCode/pull/1945
+* Comp updates from work on ESS SKADI by @willend in https://github.com/mccode-dev/McCode/pull/1948
+* Add COPY SHARE to Diaphragm Slit-alias-comp + add in McXtrace by @willend in https://github.com/mccode-dev/McCode/pull/1950
+
+### New McXtrace specific features and patches
+* McXtrace: data: refactor reflec_xraydb.py: refactor by @farhi in https://github.com/mccode-dev/McCode/pull/1897
+* McXtrace: work in data/reflec_xraydb script by @farhi in https://github.com/mccode-dev/McCode/pull/1916
+* mcxtrace:powderN: Update PowderN.comp: reduce nb of printed warnings by @farhi in https://github.com/mccode-dev/McCode/pull/1919
+* McXtrace: Fluorescence handling ala PowderN by @willend in https://github.com/mccode-dev/McCode/pull/1942
+* mcxtrace: instrument.y sync from mcstas by @willend in https://github.com/mccode-dev/McCode/pull/1943
+* Add Diaphragm Slit-alias-comp in McXtrace  by @willend in https://github.com/mccode-dev/McCode/pull/1950
+* McXtrace: samples: add Fluo+PowderN component by @farhi in https://github.com/mccode-dev/McCode/pull/1951
+* @farhi mcgui tooltip edits from https://github.com/mccode-dev/McCode/pull/1952 by @willend in https://github.com/mccode-dev/McCode/pull/1953
+* Mcxtrace fluo sx 1 by @farhi in https://github.com/mccode-dev/McCode/pull/1972
+
+### Platform support and packaging, continuous integration
+* A few minor commits for Install (sudo -E) and libgsl dependency. by @farhi in https://github.com/mccode-dev/McCode/pull/1867
+* Expand nighty test suite to macOS and Windows by @willend in https://github.com/mccode-dev/McCode/pull/1870
+* Fix paths in mcxtrace testsuite script by @willend in https://github.com/mccode-dev/McCode/pull/1871
+* Try to run the basic test using mpich on macOS by @willend in https://github.com/mccode-dev/McCode/pull/1873
+* Enable mpi for windows in test CI by @willend in https://github.com/mccode-dev/McCode/pull/1875
+* Enable MPI, NCrystal and MCPL in windows-test-CI by @willend in https://github.com/mccode-dev/McCode/pull/1876
+* Add libnexus-dev on Ubuntu nightly test by @willend in https://github.com/mccode-dev/McCode/pull/1878
+* Correct path for mcxtrace nightly testsuite by @willend in https://github.com/mccode-dev/McCode/pull/1879
+* Cppcheck hints by @willend in https://github.com/mccode-dev/McCode/pull/1881
+* Return to mpich on basictest by @willend in https://github.com/mccode-dev/McCode/pull/1882
+* Fix issue 1883 by setting mpirun --mca params by @willend in https://github.com/mccode-dev/McCode/pull/1884
+* Return None in mctest if no mccode.sim was written by @willend in https://github.com/mccode-dev/McCode/pull/1885
+* MacInstall: add comment on forcing open permission with command by @farhi in https://github.com/mccode-dev/McCode/pull/1890
+* First stab at adding basic windows MSVC test by @tkittel in https://github.com/mccode-dev/McCode/pull/1898
+* Doc correction for MCPL install-location in Windows legacy by @willend in https://github.com/mccode-dev/McCode/pull/1900
+* Restores MPIFLAGS configuration on non-windows platforms. by @willend in https://github.com/mccode-dev/McCode/pull/1904
+* Disable macos/openmpi in favour of macos/mpich for now by @willend in https://github.com/mccode-dev/McCode/pull/1906
+* Add Windows / arm64 in CI (only msvc and sans MPI for now) by @willend in https://github.com/mccode-dev/McCode/pull/1954
+* Suppess various warnings from msvc on Windows: use %li -> %zi in printfs by @willend in https://github.com/mccode-dev/McCode/pull/1958
+* Suppress msvc warnings about implicit mkdir() and getpid() by @willend in https://github.com/mccode-dev/McCode/pull/1959
+* mcrun and msvc: drop -lm and -o instr.exe by @willend in https://github.com/mccode-dev/McCode/pull/1960
+* More warning suppression msvc by @willend in https://github.com/mccode-dev/McCode/pull/1961
+* Minor fixes post 3.5.26 by @willend in https://github.com/mccode-dev/McCode/pull/1969
+
+
+## New Contributors
+* @pablogila made their first contribution in https://github.com/mccode-dev/McCode/pull/1911
+
+**Full Changelog**: https://github.com/mccode-dev/McCode/compare/v3.5.24...v3.5.27
+
+
 Changes in McStas/McXtrace 3.5.24, February 19th, 2025
 ## What's Changed
 
@@ -3468,7 +3535,7 @@ Changes in McStas v1.6-ill (alpha), October 29th, 2001.
       -USR2: finish simulation and save results
       -QUIT: end simulation immediately
  - The 2D detectors now also output the errors/counts on signal as 1D detectors.
-   Set p2=NULL in DETECTOR_OUT_2D to unactivate error saving in components.
+   Set p2=NULL in DETECTOR_OUT_2D to inactivate error saving in components.
  - We tried to lower the number of components by merging similar ones.
  - There are now new MACROS for the component programmer.
      * mccompcurindex is the number (index) of the current component
