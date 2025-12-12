@@ -182,6 +182,7 @@
   * Bugfix to NPI_tof_dhkl_detector  after discussion with Jan Saroun by @willend in https://github.com/mccode-dev/McCode/pull/2137 
  * Union components
    * Union surface and fix of focus system by @mads-bertelsen in https://github.com/mccode-dev/McCode/pull/2149, https://github.com/mccode-dev/McCode/pull/2203
+     Related bug in Union focusing bug reported by Gilbert Christensen and Dillon Huang KU/NBI.
    * Add new scattering_process_struct_init function for union processes by @tkittel in https://github.com/mccode-dev/McCode/pull/2177
    * Followup fix to #2177 with correct order of memset args by @tkittel in https://github.com/mccode-dev/McCode/pull/2196
    * Off file mesh msvc linter patches by @willend in https://github.com/mccode-dev/McCode/pull/2229
