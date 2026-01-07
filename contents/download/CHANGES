@@ -59,11 +59,37 @@
 * Modified by: PW April 2025: version 3.5.27
 * Modified by: PW June 2025: version 3.5.32
 * Modified by: PW December 2025: version 3.6.1
+* Modified by: PW January 2026: version 3.6.5
 *
-* This file is part of McStas 3.6.1, released December 12th 2025.
+* This file is part of McStas 3.6.5, released December 7th 2026.
 * It gives a 'changes' list from the beginning of the project
 *
 *******************************************************************************/
+Changes in McStas/McXtrace 3.6.5, January 7th, 2026
+## What's Changed - Main Changes:
+
+### Bugfixes, new features, all common to McStas and McXtrace:
+* macOS bundles in 3.6.1 did not actually install that version but something earlier. Fixed by pinning in yml file, @willend in https://github.com/mccode-dev/McCode/pull/2285
+* PDF manuals had wrong version numbers, @willend in https://github.com/mccode-dev/McCode/pull/2285
+* Allow mcrun / mcdisplay to run / visualize without access to .c/.instr by @willend in https://github.com/mccode-dev/McCode/pull/2281
+* mcgui/mxgui editable font colors, handle long filenames without extreme window resizing by @willend in https://github.com/mccode-dev/McCode/pull/2275
+* Fix cross-platform sort-order issue in PowderN by @willend in https://github.com/mccode-dev/McCode/pull/2272
+* Platform-independent reflection list sort in Single_crystal by @willend in https://github.com/mccode-dev/McCode/pull/2273
+* mcrun/mxrun: feature addition - scan by seed by @willend in https://github.com/mccode-dev/McCode/pull/2276
+* Add mcplot toggle to "plot 1D-curves from 0-value" in linear mode by @willend in https://github.com/mccode-dev/McCode/pull/2278
+* Add commentstring to vim editor by @Lomholy in https://github.com/mccode-dev/McCode/pull/2284
+
+### Other stuff
+* %Example adjustments, McXtrace by @willend in https://github.com/mccode-dev/McCode/pull/2269
+* Test_SANS/Test_SAXS, supplement stats by x10 SPLIT  by @willend in https://github.com/mccode-dev/McCode/pull/2270
+* Use ${{ matrix.mpi }} to ensure different output dirs by @willend in https://github.com/mccode-dev/McCode/pull/2271
+* Fix indentation bug - issue #2279 by @willend in https://github.com/mccode-dev/McCode/pull/2280
+* Temporarily disable this instr from McXtrace tests by @willend in https://github.com/mccode-dev/McCode/pull/2283
+
+**Full Changelog**: https://github.com/mccode-dev/McCode/compare/v3.6.1...v3.6.5
+
+
+Changes in McStas/McXtrace 3.6.1, December 12th, 2025
 ## What's Changed - Main Highlights:
 
 ### Overall release focus:
